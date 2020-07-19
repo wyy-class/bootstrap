@@ -9,13 +9,27 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.min.js"></script>
+    
+    <script>
+     let flag=true;
+        $(function(){
+         $("#0").click(function(){
+             
+             if(flag==true){
+                 $("#list").css("display","none");
+                 flag=false;
+             }
+             else if(flag==false){
+                 $("#list").css("display","block");
+                 flag=true;
+             }
+         })
+        })
+        
+    </script>
 </head>
 
-<body>
-    <!-- 缩略语 -->
-    <abbr title="123">java</abbr>
-    <abbr title="123" class="btn btn-success initialism">c++</abbr>
-
+<body> 
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-4 table-bordered">
@@ -30,19 +44,7 @@
             </div>
         </div>
     </div>
-    <script>
-        let flag=true;
-         $("#0").click(function(){
-             if(flag==true){
-                 $("#list").style.display=none;
-                 flag=false;
-             }
-             if(flag==false){
-                 $("list").style.display=block;
-                 flag=true;
-             }
-         })
-    </script>
+    
 
 </body>
 
