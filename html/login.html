@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+
+</head>
+
+<body>
+    <div class="btn btn-success" id="test">12</div>
+    <div data-a="1" data-b="2" id="div"></div>
+    <input type="text" id="input">
+    <script>
+        $(function () {
+            getData();
+        })
+        function getData() {
+            let dataSource = ['123', '1234', '234', '456'];
+            $("#input").typeahead({
+                source: dataSource,
+                // source：是个function或者 基本类型的数组。
+                // items :下拉选项展示的个数
+                // afterSelect：选中之后执行的回调函数。
+            })
+        }
+
+        $("#test").on("click", p);
+
+        function p() {
+            let value = $("#div").data();
+            alert(value.b);
+        }
+
+    </script>
+</body>
+
+</html>
