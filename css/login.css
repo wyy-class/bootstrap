@@ -1,0 +1,21 @@
+body{
+    background: url("../images/2.jpg") no-repeat;
+    background-size: cover;
+}
+.container-fluid{
+    padding-top: 30px;
+}
+.modal{
+    top: 40px;
+}
+.modal-header{
+    text-align: center;
+}
+img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.form-footer{
+    text-align: center;
+}

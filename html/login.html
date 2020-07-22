@@ -7,40 +7,95 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="../css/index.css" rel="stylesheet" type="text/css">
-    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../css/login.css">
+
     <script src="../js/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/login.js"></script>
+
+    <script>
+        $(function () {
+            $(".login").click(function () {
+                login();
+            })
+            $(".register").click(function () {
+                register();
+            })
+
+        })
+
+        function login() {
+            $("#first").addClass("show");
+            $("#second").removeClass("show");
+        }
+
+        function register() {
+            $("#second").addClass("show");
+            $("#first").removeClass("show");
+        }
+
+    </script>
 
 </head>
 
 <body>
-    <div class="btn btn-success" id="test">12</div>
-    <div data-a="1" data-b="2" id="div"></div>
-    <input type="text" id="input">
-    <script>
-        $(function () {
-            getData();
-        })
-        function getData() {
-            let dataSource = ['123', '1234', '234', '456'];
-            $("#input").typeahead({
-                source: dataSource,
-                // source：是个function或者 基本类型的数组。
-                // items :下拉选项展示的个数
-                // afterSelect：选中之后执行的回调函数。
-            })
-        }
+    <div class="container-fluid">
+        <div class="modal show" id="first">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="nav nav-tabs">
+                            <li class="active"><a  class="btn login">登陆</a></li>
+                            <li><a  class="btn register">注册</a></li>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#">
+                            <span class="glyphicon glyphicon-user"></span> <input class="form-control" type="text"
+                                placeholder="username"><br>
+                            <span class="glyphicon glyphicon-pencil"></span> <input class="form-control" type="password"
+                                placeholder="password"><br>
+                            <div class="form-footer">
+                                <input class="btn btn-success" type="submit" value="登陆" name="" id="">
+                                <button class="btn btn-info" onclick="">注册</button>
+                            </div>
 
-        $("#test").on("click", p);
+                        </form>
 
-        function p() {
-            let value = $("#div").data();
-            alert(value.b);
-        }
+                    </div>
 
-    </script>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="second">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="nav nav-tabs">
+                            <li><a href="#" class="btn login">登陆</a></li>
+                            <li class="active"><a href="#" class="btn register">注册</a></li>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <input type="text" name="" placeholder="username" class="form-control"><br>
+                            <input type="password" name="" placeholder="password" class="form-control"><br>
+                            <input type="email" name="" placeholder="email" class="form-control"><br>
+                            <input type="text" name="" placeholder="QQ" class="form-control"><br>
+                            <div class="form-footer">
+                                <input type="submit" class="btn btn-success" name="" value="注册">
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
